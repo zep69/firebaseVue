@@ -1,10 +1,26 @@
 <template>
-  <div >
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+	<Header/>
+	<main>
+		<router-view/>
+	</main>
+	<footer class="footer">{{year}}</footer>
 </template>
+<script>
+import { onBeforeMount } from "vue";
+import { useStore } from "vuex";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+export default {
+	components:{
+		Header,Footer,
+	},
+	data:() => ({
+		year: new Date().getFullYear()
+	})
+}
+</script>
 
 <style>
 *{
@@ -12,6 +28,11 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+.footer{
+	position: fixed;
+	bottom: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

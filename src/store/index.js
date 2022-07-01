@@ -65,8 +65,23 @@ export default createStore({
 
     },
     async logout({commit}){
+      await signOut(auth)
+        commit('CLEAR_USER')
 
+        router.push('/login')
     },
+    fetchUser({commit}){
+      auth.onAuthStateChanged(async user =>{
+        if (user === null){
+          commit('CLEAR_USER')
+        }else{
+          commit('SET_USER', user)
+          if(router.isReady()&& router.currentRoute.value.path === '/login'){
+           router.push('/')
+          }
+        }
+      })
+    }
 
 
   },
