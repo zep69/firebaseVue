@@ -2,8 +2,8 @@
 	<div class="header">
 		<router-link to="/">Home</router-link> |
 		<router-link to="/about">About</router-link>
-		<button class="logBtn" v-if="$store.state.user" @click="$store.dispatch('logout')">logout</button>
-		<button class="logBtn" v-if="!$store.state.user" @click="$router.push('/login')">Login</button>
+		<button class="logBtn p-button p-button-rounded p-button-danger" v-if="$store.state.user" @click="$store.dispatch('logout')">logout</button>
+		<button class="logBtn p-button p-button-rounded p-button-success" v-if="!$store.state.user" @click="$router.push('/login')">Login</button>
 	</div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
 <style scoped>
 .header{
 	background-color: #5375E2 ;
-	height: 3rem;
+	height: 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -35,7 +35,7 @@ export default {
 
 .logBtn{
 	position: fixed;
-	right: 2rem;
+	right: 0.5rem;
 }
 
 </style>

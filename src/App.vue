@@ -3,7 +3,20 @@
 	<main>
 		<router-view/>
 	</main>
-	<footer class="footer">{{year}}</footer>
+	<div class="footer">
+    <div style="
+    color: white; padding:1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;">
+      <p>{{year}} by Nikita Pikalov</p>
+      <div>
+        <Button icon="pi pi-telegram" class="p-button-icon p-button-rounded p-button-outlined" style="color: white;"/>
+        <Button icon="pi pi-comment" class="p-button-icon p-button-rounded p-button-outlined" style="color: white; margin-left: 3px;"/>
+      </div>
+
+    </div>
+  </div>
 </template>
 <script>
 import { onBeforeMount } from "vue";
@@ -31,6 +44,9 @@ export default {
 .footer{
 	position: fixed;
 	bottom: 0;
+  height: 4rem;
+  background-color: #5375E2;
+  width: 100%;
 }
 
 #app {

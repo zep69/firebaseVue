@@ -7,17 +7,17 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta:{
+   /* meta:{
       requiresAuth:true
-    }
+    }*/
   },
   {
     path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-    meta:{
+   /* meta:{
       requiresAuth:true
-    }
+    }*/
   },
   {
     path: '/login',
@@ -36,7 +36,7 @@ router.beforeEach((to, from,next)=>{
     return
   }
   if (to.matched.some(record => record.meta.requiresAuth) && !auth.currentUser){
-    next('/login')
+    next('/')
     return;
   }
   next();

@@ -3,9 +3,9 @@
 		<section class="forms">
 			<form  class="register" @submit.prevent="register">
 				<h2>Register</h2>
-				<input type="email" placeholder="Email" v-model="register_form.email"/>
-				<input type="password" placeholder="password" v-model="register_form.password"/>
-				<input	type="submit" value="Register"/>
+        <input class="p-inputtext" type="email" placeholder="Email" v-model="register_form.email"/>
+        <input class="p-inputtext" type="password" placeholder="password" v-model="register_form.password"/>
+        <Button type="submit" value="Register">Register </Button>
 
 			</form>
 			<form class="login" @submit.prevent="login">
