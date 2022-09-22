@@ -37,12 +37,14 @@ export default {
 
 <style>
 *{
+
 	margin:0;
 	padding: 0;
 	box-sizing: border-box;
+
 }
 .footer{
-	position: fixed;
+  overflow: hidden;
 	bottom: 0;
   height: 4rem;
   background-color: #5375E2;

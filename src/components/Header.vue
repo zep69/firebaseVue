@@ -1,9 +1,16 @@
 <template>
-	<div class="header">
-		<router-link to="/">Home</router-link> |
-		<router-link to="/about">About</router-link>
-		<button class="logBtn p-button p-button-rounded p-button-danger" v-if="$store.state.user" @click="$store.dispatch('logout')">logout</button>
-		<button class="logBtn p-button p-button-rounded p-button-success" v-if="!$store.state.user" @click="$router.push('/login')">Login</button>
+	<div class="p-toolbar" style="background-color: #5375E2">
+    <div class="p-toolbar-group-left">
+      <router-link class="p-button p-button-text" style="color: white" to="/">Главная</router-link>
+      <router-link class="p-button p-button-text" style="color: white" to="/about">Обо мне</router-link>
+    </div>
+
+
+
+
+    <button class="p-toolbar-group-right p-button p-button-rounded p-button-danger" v-if="$store.state.user" @click="$store.dispatch('logout')">Выйти</button>
+    <button class="p-toolbar-group-right p-button p-button-rounded p-button-success" v-if="!$store.state.user" @click="$router.push('/login')">Войти</button>
+
 	</div>
 </template>
 

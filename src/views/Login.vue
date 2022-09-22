@@ -1,20 +1,51 @@
 <template>
-	<main class="login">
-		<section class="forms">
-			<form  class="register" @submit.prevent="register">
-				<h2>Register</h2>
-        <input class="p-inputtext" type="email" placeholder="Email" v-model="register_form.email"/>
-        <input class="p-inputtext" type="password" placeholder="password" v-model="register_form.password"/>
-        <Button type="submit" value="Register">Register </Button>
+	<main class="login page">
 
-			</form>
-			<form class="login" @submit.prevent="login">
-				<h2>Login</h2>
-				<input type="email" placeholder="Email" v-model="login_form.email"/>
-				<input type="password" placeholder="password" v-model="login_form.password"/>
-				<input	type="submit" value="Login"/>
-			</form>
+    <div class="p-card" style="margin-top: 7rem" >
+      <TabView>
+		<section class="forms " >
+      <TabPanel>
+        <template #header>
+          <span>Зарегистрироваться</span>
+        </template>
+      <Card class="p-card" style="margin-top: 3rem;padding: 2rem">
+        <template #header>
+          <img src="../assets/19199620.jpg" style="height: 25rem"  >
+        </template>
+        <template #content>
+			  <form  class="register" @submit.prevent="register">
+				  <h2>Чтобы записаться на урок, зарегистрирутесь</h2>
+          <br>
+          <input class="p-inputtext" type="email" placeholder="Email" v-model="register_form.email"/>
+          <input class="p-inputtext" type="password" placeholder="password" v-model="register_form.password"/>
+          <Button type="submit" value="Register">Register </Button>
+			 </form>
+        </template>
+      </Card>
+      </TabPanel>
+
+      <TabPanel>
+        <template #header>
+          <span>Войти</span>
+        </template>
+       <Card class="p-card" style="margin-top: 3rem; padding: 2rem">
+         <template #header>
+           <img src="../assets/5836.jpg" style="height: 25rem">
+         </template>
+         <template #content>
+			   <form class="login" @submit.prevent="login">
+				   <h2>Войти в систему</h2>
+           <br>
+           <input class="p-inputtext" type="email" style="margin-left: 1rem" placeholder="Email" v-model="login_form.email"/>
+				   <input class="p-inputtext" type="password" style="margin-left: 1rem" placeholder="password" v-model="login_form.password"/>
+           <Button	class="p-button p-button-success" style="margin-left: 1rem" type="submit" value="Login">Login</Button>
+			   </form>
+         </template>
+      </Card>
+      </TabPanel>
 		</section>
+      </TabView>
+    </div>
 	</main>
 
 </template>
@@ -49,5 +80,12 @@ export default {
 </script>
 
 <style scoped>
-
+.page{
+  width: 45rem;
+  max-width: 45rem;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%);
+}
 </style>
